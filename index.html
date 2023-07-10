@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hello World with JavaScript</title>
+        <script type="text/JavaScript">
+            addEventListener("load", (event) => {
+                let button = document.getElementById("generate-name")
+                let nameDiv = document.getElementById("name")
+                button.addEventListener("click", (event) => {
+                    nameDiv.innerHTML = "<b>Panos</b>";
+                })
+            })
+            
+        </script>
+    </head>
+    <body>
+        <button id="generate-name">Generate Name</button>
+        <div id="name">
+        </div>
+    </body>
+</html>
