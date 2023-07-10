@@ -4,16 +4,29 @@
     <title>Hello World with JavaScript</title>
     <script type="text/JavaScript">
       addEventListener("load", (event) => {
-          let btnGenerateName = document.getElementById("generate-name")
-          let nameDiv = document.getElementById("name")
+          const btnGenerateName = document.getElementById("generate-name")
+          const nameDiv = document.getElementById("name")
           btnGenerateName.addEventListener("click", (event) => {
               nameDiv.innerHTML = "<b>Panos</b>";
           })
 
-          let btnDisplayToast = document.getElementById("display-toast-message")
+          const btnDisplayToast = document.getElementById("display-toast-message")
           btnDisplayToast.addEventListener("click", (event) => {
             Android.showToast("Hello from Web View");
           })
+
+          const densityInfoContainer = document.getElementById("density-info")
+          let message = ""
+          if (devicePixelRatio === 1.5) {
+            message = "high density device";
+          } else if (devicePixelRatio === 1) {
+            message = "medium density device";
+          } else if (devicePixelRatio === 0.75) {
+            message = "low density device";
+          } else {
+            message = "can't tell the density of the device";
+          }
+          densityInfoContainer.innerHTML = message;
       })
     </script>
   </head>
@@ -51,6 +64,10 @@
       <p>
         <a href="https://www.google.com">Google</a>
       </p>
+    </div>
+    <hr />
+    <div>
+      <p id="density-info"></p>
     </div>
   </body>
 </html>
