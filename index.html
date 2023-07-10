@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Hello World with JavaScript</title>
-        <script type="text/JavaScript">
-            addEventListener("load", (event) => {
-                let button = document.getElementById("generate-name")
-                let nameDiv = document.getElementById("name")
-                button.addEventListener("click", (event) => {
-                    nameDiv.innerHTML = "<b>Panos</b>";
-                })
-            })
-            
-        </script>
-    </head>
-    <body>
-        <button id="generate-name">Generate Name</button>
-        <div id="name">
-        </div>
-    </body>
+  <head>
+    <title>Hello World with JavaScript</title>
+    <script type="text/JavaScript">
+      addEventListener("load", (event) => {
+          let btnGenerateName = document.getElementById("generate-name")
+          let nameDiv = document.getElementById("name")
+          btnGenerateName.addEventListener("click", (event) => {
+              nameDiv.innerHTML = "<b>Panos</b>";
+          })
+
+          let btnDisplayToast = document.getElementById("display-toast-message")
+          btnDisplayToast.addEventListener("click", (event) => {
+            Android.showToast("Hello from Web View");
+          })
+      })
+    </script>
+  </head>
+  <body>
+    <div>
+      <button id="generate-name">Generate Name</button>
+      <div id="name"></div>
+    </div>
+    <div>
+      <button id="display-toast-message">Display Toast Message</button>
+    </div>
+  </body>
 </html>
