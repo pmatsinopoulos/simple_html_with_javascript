@@ -16,6 +16,7 @@
           })
 
           const densityInfoContainer = document.getElementById("density-info")
+          console.debug("Device pixel ratio: ", devicePixelRatio);
           let message = ""
           if (devicePixelRatio === 1.5) {
             message = "high density device";
